@@ -51,7 +51,7 @@
             this.btnStart.BackColor = System.Drawing.Color.Transparent;
             this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnStart.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.btnStart.ForeColor = System.Drawing.Color.White;
             this.btnStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnStart.Location = new System.Drawing.Point(483, 294);
@@ -68,7 +68,7 @@
             this.btnRetry.BackColor = System.Drawing.Color.Transparent;
             this.btnRetry.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRetry.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRetry.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btnRetry.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.btnRetry.ForeColor = System.Drawing.Color.White;
             this.btnRetry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnRetry.Location = new System.Drawing.Point(483, 222);
@@ -84,12 +84,12 @@
             // lblScore
             // 
             this.lblScore.AutoSize = true;
-            this.lblScore.Font = new System.Drawing.Font("Press Start 2P", 14.25F);
+            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.lblScore.ForeColor = System.Drawing.Color.White;
             this.lblScore.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblScore.Location = new System.Drawing.Point(528, 9);
             this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(126, 26);
+            this.lblScore.Size = new System.Drawing.Size(65, 24);
             this.lblScore.TabIndex = 2;
             this.lblScore.Text = "Score:";
             // 
@@ -97,55 +97,55 @@
             // 
             this.lblLevel.AutoSize = true;
             this.lblLevel.BackColor = System.Drawing.Color.Black;
-            this.lblLevel.Font = new System.Drawing.Font("Press Start 2P", 14.25F);
+            this.lblLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.lblLevel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblLevel.Location = new System.Drawing.Point(3, 9);
             this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(126, 26);
+            this.lblLevel.Size = new System.Drawing.Size(60, 24);
             this.lblLevel.TabIndex = 3;
             this.lblLevel.Text = "Level:";
             // 
             // lblLives
             // 
             this.lblLives.AutoSize = true;
-            this.lblLives.Font = new System.Drawing.Font("Press Start 2P", 14.25F);
+            this.lblLives.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.lblLives.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblLives.Location = new System.Drawing.Point(1044, 9);
             this.lblLives.Name = "lblLives";
-            this.lblLives.Size = new System.Drawing.Size(126, 26);
+            this.lblLives.Size = new System.Drawing.Size(58, 24);
             this.lblLives.TabIndex = 4;
             this.lblLives.Text = "Lives:";
             // 
             // lblScoreCounter
             // 
             this.lblScoreCounter.AutoSize = true;
-            this.lblScoreCounter.Font = new System.Drawing.Font("Press Start 2P", 14.25F);
+            this.lblScoreCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.lblScoreCounter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblScoreCounter.Location = new System.Drawing.Point(648, 9);
             this.lblScoreCounter.Name = "lblScoreCounter";
-            this.lblScoreCounter.Size = new System.Drawing.Size(31, 26);
+            this.lblScoreCounter.Size = new System.Drawing.Size(20, 24);
             this.lblScoreCounter.TabIndex = 5;
             this.lblScoreCounter.Text = "0";
             // 
             // lblLevelCounter
             // 
             this.lblLevelCounter.AutoSize = true;
-            this.lblLevelCounter.Font = new System.Drawing.Font("Press Start 2P", 14.25F);
+            this.lblLevelCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.lblLevelCounter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblLevelCounter.Location = new System.Drawing.Point(123, 9);
             this.lblLevelCounter.Name = "lblLevelCounter";
-            this.lblLevelCounter.Size = new System.Drawing.Size(31, 26);
+            this.lblLevelCounter.Size = new System.Drawing.Size(20, 24);
             this.lblLevelCounter.TabIndex = 6;
             this.lblLevelCounter.Text = "0";
             // 
             // lblLivesCounter
             // 
             this.lblLivesCounter.AutoSize = true;
-            this.lblLivesCounter.Font = new System.Drawing.Font("Press Start 2P", 14.25F);
+            this.lblLivesCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.lblLivesCounter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblLivesCounter.Location = new System.Drawing.Point(1164, 9);
             this.lblLivesCounter.Name = "lblLivesCounter";
-            this.lblLivesCounter.Size = new System.Drawing.Size(31, 26);
+            this.lblLivesCounter.Size = new System.Drawing.Size(20, 24);
             this.lblLivesCounter.TabIndex = 7;
             this.lblLivesCounter.Text = "0";
             // 
@@ -153,11 +153,11 @@
             // 
             this.lblTitleB.AutoSize = true;
             this.lblTitleB.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitleB.Font = new System.Drawing.Font("Press Start 2P", 48F, System.Drawing.FontStyle.Bold);
+            this.lblTitleB.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
             this.lblTitleB.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblTitleB.Location = new System.Drawing.Point(369, 138);
             this.lblTitleB.Name = "lblTitleB";
-            this.lblTitleB.Size = new System.Drawing.Size(103, 88);
+            this.lblTitleB.Size = new System.Drawing.Size(76, 73);
             this.lblTitleB.TabIndex = 8;
             this.lblTitleB.Text = "B";
             // 
@@ -165,11 +165,11 @@
             // 
             this.lblTitleT.AutoSize = true;
             this.lblTitleT.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitleT.Font = new System.Drawing.Font("Press Start 2P", 48F, System.Drawing.FontStyle.Bold);
+            this.lblTitleT.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
             this.lblTitleT.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblTitleT.Location = new System.Drawing.Point(720, 138);
             this.lblTitleT.Name = "lblTitleT";
-            this.lblTitleT.Size = new System.Drawing.Size(103, 88);
+            this.lblTitleT.Size = new System.Drawing.Size(72, 73);
             this.lblTitleT.TabIndex = 9;
             this.lblTitleT.Text = "T";
             // 
@@ -177,11 +177,11 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("Press Start 2P", 36F);
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             this.lblTitle.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblTitle.Location = new System.Drawing.Point(442, 149);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(316, 66);
+            this.lblTitle.Size = new System.Drawing.Size(227, 55);
             this.lblTitle.TabIndex = 10;
             this.lblTitle.Text = "REAKOU";
             // 
@@ -191,7 +191,7 @@
             this.btnHelp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHelp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHelp.Font = new System.Drawing.Font("Press Start 2P", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnHelp.ForeColor = System.Drawing.Color.White;
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnHelp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -217,7 +217,7 @@
             this.btnResume.BackColor = System.Drawing.Color.Transparent;
             this.btnResume.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnResume.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnResume.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btnResume.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.btnResume.ForeColor = System.Drawing.Color.White;
             this.btnResume.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnResume.Location = new System.Drawing.Point(484, 438);
@@ -235,7 +235,7 @@
             this.btnQuit.BackColor = System.Drawing.Color.Transparent;
             this.btnQuit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnQuit.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.btnQuit.ForeColor = System.Drawing.Color.White;
             this.btnQuit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnQuit.Location = new System.Drawing.Point(484, 510);

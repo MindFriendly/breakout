@@ -8,6 +8,7 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Imaging;
 using Breakout.Objects;
 using Breakout.Helpers;
 
@@ -24,7 +25,9 @@ namespace Breakout
 
         public int level { get; set; }        
 
-        private SoundPlayer bgm { get; set; }
+        private System.Windows.Media.MediaPlayer bgm { get; set; }
+
+        private BGState bgState { get; set; }
 
         private Ticker ticker { get; set; }
 
@@ -48,9 +51,33 @@ namespace Breakout
         /// <param name="e"></param>
         private void frmGame_Load(object sender, EventArgs e)
         {
-            bgm = new System.Media.SoundPlayer("C:\\Users\\steve\\School\\CSV13\\breakout\\Breakout\\Breakout\\Assets\\Mars.wav");
+            bgState = BGState.Menu;
 
-            bgm.PlayLooping();
+            bgm = new System.Windows.Media.MediaPlayer();
+
+            bgm.MediaEnded += new EventHandler(bgm_Loop);
+
+            bgm.Open(new System.Uri(@"Z:\\acsv13-imagine\\Steve Mulholland - Breakout\\Breakout\\Breakout\\Assets\\Mars.wav"));
+
+            bgm.Play();            
+
+            Cursor.Show();
+        }
+
+        private void bgm_Loop(object sender, EventArgs e)
+        {
+            if (this.bgState == BGState.Menu)
+            {
+                bgm.Open(new System.Uri(@"Z:\\acsv13-imagine\\Steve Mulholland - Breakout\\Breakout\\Breakout\\Assets\\Mars.wav"));
+
+                bgm.Play();
+            }
+            else if (this.bgState == BGState.Level)
+            {
+                bgm.Open(new System.Uri(@"Z:\\acsv13-imagine\\Steve Mulholland - Breakout\\Breakout\\Breakout\\Assets\\Map.wav"));
+
+                bgm.Play();
+            }
         }
 
         /// <summary>
@@ -85,7 +112,7 @@ namespace Breakout
         {
             hideMenuUI();            
 
-            initGame();
+            initGame();            
         }
 
         /// <summary>
@@ -167,12 +194,14 @@ namespace Breakout
         /// Set the scoreboard and draw the game elements.
         /// </summary>
         private void initGame()
-        {           
+        {
+            bgState = BGState.Level;
+
             bgm.Stop();
+            
+            bgm.Open(new System.Uri(@"Z:\\acsv13-imagine\\Steve Mulholland - Breakout\\Breakout\\Breakout\\Assets\\Map.wav"));
 
-            bgm = new System.Media.SoundPlayer("C:\\Users\\steve\\School\\CSV13\\breakout\\Breakout\\Breakout\\Assets\\Map.wav");
-
-            bgm.PlayLooping();
+            bgm.Play();
 
             initScores();
 
@@ -272,9 +301,11 @@ namespace Breakout
         {
             bgm.Stop();
 
-            bgm = new System.Media.SoundPlayer("C:\\Users\\steve\\School\\CSV13\\breakout\\Breakout\\Breakout\\Assets\\Mars.wav");
+            bgm = new System.Windows.Media.MediaPlayer();
 
-            bgm.PlayLooping();
+            bgm.Open(new System.Uri(@"Z:\\acsv13-imagine\\Steve Mulholland - Breakout\\Breakout\\Breakout\\Assets\\Map.wav"));
+
+            bgm.Play();
 
             Cursor.Hide();
 
@@ -386,30 +417,51 @@ namespace Breakout
         {
             if (lives > 1)
             {
-                lives -= 1;
-
-                lblLivesCounter.Text = lives.ToString();
-
-                ball.Reset();
+                newLife();
             }
             else
             {
-                resetGame();
+                endGame();
             }
+        }
+
+        /// <summary>
+        /// Reset the ball location and speed and reinit the timer.
+        /// </summary>
+        private void newLife()
+        {
+            lives -= 1;
+
+            lblLivesCounter.Text = lives.ToString();
+
+            ticker.Dispose();
+
+            ball.Dispose();
+
+            initBall();
+
+            initTicker();
         }
 
         /// <summary>
         /// Removes all instances of game elements and sets all variable to default values.
         /// </summary>
-        private void resetGame()
+        private void endGame()
         {
+            ticker.Dispose();
+
+            ball.Reset();            
+
             ball.Dispose();
 
             paddle.Dispose();
 
             Cursor.Show();
 
-            btnRetry.Visible = true;
+            if (!btnRetry.Visible)
+            {
+                btnRetry.Visible = true;
+            }            
         }
 
         #endregion

@@ -55,7 +55,9 @@ namespace Breakout.Objects
 
             this.Width = WIDTH;
 
-            this.Top = 50;
+            this.Top = 200;
+
+            this.Left = _gameBoard.Left - (_gameBoard.Left / 2);
 
             this.vSpeed = 4;
 
@@ -75,9 +77,9 @@ namespace Breakout.Objects
         /// </summary>
         public void HitPaddle()
         {
-            //plop = new System.Media.SoundPlayer("C:\\Users\\steve\\School\\CSV13\\breakout\\Breakout\\Breakout\\Assets\\plop.wav");
+            plop = new SoundPlayer("Z:\\acsv13-imagine\\Steve Mulholland - Breakout\\Breakout\\Breakout\\Assets\\plop.wav");
 
-            //plop.Play();
+            plop.Play();
 
             this.hSpeed += 1;
 
@@ -88,9 +90,9 @@ namespace Breakout.Objects
 
         public void HitWall(Sides side)
         {
-            //beep = new System.Media.SoundPlayer("C:\\Users\\steve\\School\\CSV13\\breakout\\Breakout\\Breakout\\Assets\\beep.wav");
+            beep = new System.Media.SoundPlayer("Z:\\acsv13-imagine\\Steve Mulholland - Breakout\\Breakout\\Breakout\\Assets\\beep.wav");
 
-            //beep.Play();
+            beep.Play();
 
             switch (side)
             {

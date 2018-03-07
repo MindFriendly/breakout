@@ -10,8 +10,8 @@ namespace Breakout.Objects
 {
     class Paddle : PictureBox
     {
-        private const int HEIGHT = 20;
-        private const int WIDTH = 200;
+        private const int HEIGHT = 50;
+        private const int WIDTH = 300;
         private Color COLOR = Color.White;
 
         private Panel gameBoard;

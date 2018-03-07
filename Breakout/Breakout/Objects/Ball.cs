@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Breakout.Helpers;
 
 namespace Breakout.Objects
 {
@@ -25,6 +27,10 @@ namespace Breakout.Objects
         #region PRIVATE PROPERTIES
 
         private Panel gameBoard { get; set; }
+
+        private SoundPlayer beep { get; set; }
+
+        private SoundPlayer plop { get; set; }
 
         public int vSpeed { get; set; }
 
@@ -69,11 +75,39 @@ namespace Breakout.Objects
         /// </summary>
         public void HitPaddle()
         {
+            //plop = new System.Media.SoundPlayer("C:\\Users\\steve\\School\\CSV13\\breakout\\Breakout\\Breakout\\Assets\\plop.wav");
+
+            //plop.Play();
+
             this.hSpeed += 1;
 
             this.vSpeed += +1;
 
             this.vSpeed = -this.vSpeed;
+        }
+
+        public void HitWall(Sides side)
+        {
+            //beep = new System.Media.SoundPlayer("C:\\Users\\steve\\School\\CSV13\\breakout\\Breakout\\Breakout\\Assets\\beep.wav");
+
+            //beep.Play();
+
+            switch (side)
+            {
+                case Sides.TopOrBottom:
+                    this.vSpeed = -this.vSpeed;
+                    break;
+                case Sides.RightOrLeft:
+                    this.hSpeed = -this.hSpeed;
+                    break;
+                default:
+                    break;
+            }            
+        }
+
+        public void Reset()
+        {
+            this.Top = gameBoard.Bottom - 100;
         }
     }
 }

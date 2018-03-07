@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\Sides.cs" />
     <Compile Include="Objects\Ball.cs">
       <SubType>Component</SubType>
     </Compile>

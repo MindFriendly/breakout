@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Breakout.Objects;
+using Breakout.Helpers;
 
 namespace Breakout
 {
@@ -64,8 +65,10 @@ namespace Breakout
             if (keyData == Keys.Escape)
             {
                 pauseGame();
+
                 return true;
             }
+
             return base.ProcessCmdKey(ref msg, keyData);
         }        
 
@@ -80,21 +83,43 @@ namespace Breakout
         /// <param name="e"></param>
         private void btnStart_Click(object sender, EventArgs e)
         {
-            hideMenuUI();
-
-            Cursor.Hide();
+            hideMenuUI();            
 
             initGame();
         }
 
+        /// <summary>
+        /// Unpause the game.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnResume_Click(object sender, EventArgs e)
         {
             unPauseGame();
         }
 
+        /// <summary>
+        /// Exit the game.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnQuit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        /// <summary>
+        /// Set the score to 0 and start a new game by showing the main menu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRetry_Click(object sender, EventArgs e)
+        {
+            score = 0;
+
+            lblScoreCounter.Text = score.ToString();
+
+            newGameMenu();
         }
 
         /// <summary>
@@ -120,23 +145,23 @@ namespace Breakout
 
             if (ball.Left <= gameBoard.Left || ball.Right >= gameBoard.Right)
             {
-                ball.hSpeed = -ball.hSpeed;
+                ball.HitWall(Sides.RightOrLeft);
             }
 
             if (ball.Top <= gameBoard.Top || ball.Bottom >= gameBoard.Bottom)
             {
-                ball.vSpeed = -ball.vSpeed;
+                ball.HitWall(Sides.TopOrBottom);
             }
 
             if (ball.Bottom >= gameBoard.Bottom)
             {
-                ticker.Enabled = false;
+                loseLife();
             }
         }
 
         #endregion
 
-        #region CLASS INITIALIZERS        
+        #region CLASS INITIALIZERS
 
         /// <summary>
         /// Set the scoreboard and draw the game elements.
@@ -169,7 +194,7 @@ namespace Breakout
         }
 
         /// <summary>
-        /// 
+        /// Put the paddle on the gameboard.
         /// </summary>
         private void initPaddle()
         {
@@ -227,6 +252,8 @@ namespace Breakout
         /// </summary>
         private void hideMenuUI()
         {
+            Cursor.Hide();
+
             btnStart.Visible = false;
 
             btnHelp.Visible = false;
@@ -238,6 +265,35 @@ namespace Breakout
             lblTitleT.Visible = false;
         }
 
+        /// <summary>
+        /// When a new game is started, show the main menu.
+        /// </summary>
+        private void newGameMenu()
+        {
+            bgm.Stop();
+
+            bgm = new System.Media.SoundPlayer("C:\\Users\\steve\\School\\CSV13\\breakout\\Breakout\\Breakout\\Assets\\Mars.wav");
+
+            bgm.PlayLooping();
+
+            Cursor.Hide();
+
+            btnRetry.Visible = false;
+
+            btnStart.Visible = true;
+
+            btnHelp.Visible = true;
+
+            lblTitle.Visible = true;
+
+            lblTitleB.Visible = true;
+
+            lblTitleT.Visible = true;
+        }
+
+        /// <summary>
+        /// Stop the timer object and bring up a UI to interact with the game while paused.
+        /// </summary>
         private void pauseGame()
         {
             ticker.Stop();
@@ -249,6 +305,9 @@ namespace Breakout
             Cursor.Show();
         }
 
+        /// <summary>
+        /// Hide the ball, paddle and bricks while the game is paused.
+        /// </summary>
         private void hideGameElements()
         {
             ball.Visible = false;
@@ -256,6 +315,9 @@ namespace Breakout
             paddle.Visible = false;
         }
 
+        /// <summary>
+        /// Shows the resume and quit buttons after hiding other game elements.
+        /// </summary>
         private void showPauseUI()
         {
             btnResume.Visible = true;
@@ -271,6 +333,9 @@ namespace Breakout
             btnQuit.Top = btnHelp.Top;
         }
 
+        /// <summary>
+        /// Hide the pause menu and resume the timer object.
+        /// </summary>
         private void unPauseGame()
         {
             showGameElements();
@@ -282,6 +347,9 @@ namespace Breakout
             ticker.Start();
         }
 
+        /// <summary>
+        /// Hides the pause menu when resume is clicked.
+        /// </summary>
         private void hidePauseUI()
         {
             btnResume.Visible = false;
@@ -289,6 +357,9 @@ namespace Breakout
             btnQuit.Visible = false;
         }
 
+        /// <summary>
+        /// Show the ball, paddle and bricks upon unpause.
+        /// </summary>
         private void showGameElements()
         {
             ball.Visible = true;
@@ -297,10 +368,48 @@ namespace Breakout
 
         }
 
+        /// <summary>
+        /// Updates the score by the points specified.
+        /// </summary>
+        /// <param name="points">Number of points to increase score.</param>
         private void updateScore(int points)
         {
             score += points;
+
             lblScoreCounter.Text = score.ToString();
+        }
+
+        /// <summary>
+        /// Subtracts 1 from total lives. If 0, restarts the game.
+        /// </summary>
+        private void loseLife()
+        {
+            if (lives > 1)
+            {
+                lives -= 1;
+
+                lblLivesCounter.Text = lives.ToString();
+
+                ball.Reset();
+            }
+            else
+            {
+                resetGame();
+            }
+        }
+
+        /// <summary>
+        /// Removes all instances of game elements and sets all variable to default values.
+        /// </summary>
+        private void resetGame()
+        {
+            ball.Dispose();
+
+            paddle.Dispose();
+
+            Cursor.Show();
+
+            btnRetry.Visible = true;
         }
 
         #endregion

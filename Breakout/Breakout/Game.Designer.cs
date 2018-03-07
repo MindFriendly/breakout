@@ -50,7 +50,7 @@
             // 
             this.btnStart.BackColor = System.Drawing.Color.Transparent;
             this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnStart.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold);
             this.btnStart.ForeColor = System.Drawing.Color.White;
             this.btnStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -67,7 +67,7 @@
             // 
             this.btnRetry.BackColor = System.Drawing.Color.Transparent;
             this.btnRetry.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRetry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRetry.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRetry.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold);
             this.btnRetry.ForeColor = System.Drawing.Color.White;
             this.btnRetry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -79,6 +79,7 @@
             this.btnRetry.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRetry.UseVisualStyleBackColor = false;
             this.btnRetry.Visible = false;
+            this.btnRetry.Click += new System.EventHandler(this.btnRetry_Click);
             // 
             // lblScore
             // 
@@ -189,7 +190,7 @@
             this.btnHelp.BackColor = System.Drawing.Color.Transparent;
             this.btnHelp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHelp.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHelp.Font = new System.Drawing.Font("Press Start 2P", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnHelp.ForeColor = System.Drawing.Color.White;
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -215,7 +216,7 @@
             // 
             this.btnResume.BackColor = System.Drawing.Color.Transparent;
             this.btnResume.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnResume.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResume.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnResume.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold);
             this.btnResume.ForeColor = System.Drawing.Color.White;
             this.btnResume.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -233,7 +234,7 @@
             // 
             this.btnQuit.BackColor = System.Drawing.Color.Transparent;
             this.btnQuit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuit.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold);
             this.btnQuit.ForeColor = System.Drawing.Color.White;
             this.btnQuit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
